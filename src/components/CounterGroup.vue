@@ -3,7 +3,7 @@
         <li>
                 <span>
      <input type="button" value="+" @click="addCount">
-     {{count}}
+     {{ffcount}}
      <input type="button" value="-" @click="subCount">
    </span>
         </li>
@@ -12,21 +12,24 @@
 </template>
 
 <script>
+
     export default {
+
         name: "CounterGroup",
+
         methods: {
             addCount() {
-                this.count++;
-                this.$emit('addOrSub', 1);
+                this.ffcount++;
+                this.$store.commit('increment');
             },
             subCount() {
-                this.count--;
-                this.$emit('addOrSub', -1);
+                this.ffcount--;
+                this.$store.commit('decrement');
             }
         },
         data(){
             return {
-                count: 0
+                ffcount: 0
             }
         },
         props: {
@@ -35,6 +38,7 @@
         },
         beforeDestroy: function () {
             this.$emit('destory', this.count);
+            this.$store.commit('destoryItem',this.ffcount);
         },
     }
 </script>

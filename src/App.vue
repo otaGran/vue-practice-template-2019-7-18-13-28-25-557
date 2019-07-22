@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld v-bind:counterNum="counter"/>
+        <HelloWorld />
 <!--        <CounterGroup  v-bind:counterNum="counter"></CounterGroup>-->
     </div>
 </template>

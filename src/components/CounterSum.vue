@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{notused}}
+        {{$store.state.count}}
     </div>
 
 </template>
@@ -9,12 +9,10 @@
     export default {
         name: "CounterSum",
         data(){
-            return{
-                sum : 0
-            }
+
         },
         props:{
-            notused: Number
+
         }
     }
 </script>

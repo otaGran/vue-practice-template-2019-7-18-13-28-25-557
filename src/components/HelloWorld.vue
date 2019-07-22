@@ -2,15 +2,17 @@
     <div class="hello">
 
         <!--     <input type="button" value="+" @click="addCount">-->
-        <input type="number" v-model.number="counterNum" v-on:change="printCounter()">
+        <input type="number" v-model.number="counterNum">
         <span v-for="n in counterNum">
 
         <CounterGroup v-bind:key="n" @addOrSub="addOrSub" @destory="destoryItem"></CounterGroup>
             </span>
 
-        <CounterSum v-model.number="notused"></CounterSum>
+        <CounterSum ></CounterSum>
 
-        {{notused}}
+
+
+
         <!--     <input type="button" value="-" @click="subCount">-->
 
     </div>
@@ -24,6 +26,7 @@
         name: 'HelloWorld',
         data() {
             return {
+                counterNum :0,
                 notused: 0
             }
         },
@@ -43,11 +46,12 @@
         },
         props: {
 
-            counterNum: Number
+
         }, components: {
             CounterGroup
             , CounterSum
-        }
+        },
+
 
     }
 </script>
